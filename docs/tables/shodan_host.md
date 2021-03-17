@@ -49,7 +49,7 @@ where
 select
   ip,
   city,
-  country
+  country_code
 from
   shodan_host
 where

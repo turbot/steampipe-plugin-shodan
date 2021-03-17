@@ -37,7 +37,7 @@ where
 select
   ip,
   port,
-  opts->>'heartbleed'
+  opts->>'heartbleed' as heartbleed
 from
   shodan_host_service
 where

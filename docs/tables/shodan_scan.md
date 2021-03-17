@@ -7,7 +7,10 @@ List all the on-demand scans active in the account.
 ### List the scans
 
 ```sql
-select * from shodan_scan
+select
+  *
+from
+  shodan_scan
 ```
 
 ### List scans that are not complete

@@ -7,11 +7,21 @@ List all protocols that can be used when performing on-demand Internet scans via
 ### List the protocols
 
 ```sql
-select * from shodan_protocol order by name
+select
+  *
+from
+  shodan_protocol
+order by
+  name
 ```
 
 ### Get the Postgres protocol
 
 ```sql
-select * from shodan_protocol where name = 'postgresql'
+select
+  *
+from
+  shodan_protocol
+where
+  name = 'postgresql'
 ```
