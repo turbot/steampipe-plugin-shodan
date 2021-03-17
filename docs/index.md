@@ -1,8 +1,8 @@
 ---
 organization: Turbot
-category: ["internet"]
+category: ["security"]
 icon_url: "/images/plugins/turbot/shodan.svg"
-brand_color: "#B94039"
+brand_color: "#C83237"
 display_name: Shodan
 name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
