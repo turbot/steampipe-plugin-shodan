@@ -44,3 +44,9 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 
 	return conn, nil
 }
+
+func queryString(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+	quals := d.KeyColumnQuals
+	q := quals["query"].GetStringValue()
+	return q, nil
+}

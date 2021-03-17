@@ -26,6 +26,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"shodan_port":            tableShodanPort(ctx),
 			"shodan_protocol":        tableShodanProtocol(ctx),
 			"shodan_scan":            tableShodanScan(ctx),
+			"shodan_search":          tableShodanSearch(ctx),
 			"shodan_service":         tableShodanService(ctx),
 		},
 	}
