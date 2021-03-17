@@ -1,0 +1,46 @@
+package shodan
+
+import (
+	"context"
+	"net/http"
+	"os"
+
+	shodan "github.com/shadowscatcher/shodan"
+
+	"github.com/turbot/steampipe-plugin-sdk/plugin"
+)
+
+func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
+
+	// Load connection from cache, which preserves throttling protection etc
+	cacheKey := "shodan"
+	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+		return cachedData.(*shodan.Client), nil
+	}
+
+	var apiKey string
+
+	// First, use the api_key config
+	shodanConfig := GetConfig(d.Connection)
+	if &shodanConfig != nil {
+		if shodanConfig.APIKey != nil {
+			apiKey = *shodanConfig.APIKey
+		}
+	}
+
+	// Otherwise, default to using SHODAN_KEY env var
+	if apiKey == "" {
+		apiKey = os.Getenv("SHODAN_API_KEY")
+	}
+
+	// Configure to automatically wait 1 sec between requests, per Shodan API requirements
+	conn, err := shodan.GetClient(apiKey, http.DefaultClient, true)
+	if err != nil {
+		return nil, err
+	}
+
+	// Save to cache
+	d.ConnectionManager.Cache.Set(cacheKey, conn)
+
+	return conn, nil
+}
