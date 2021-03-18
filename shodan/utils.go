@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"os"
+	"strings"
 
 	shodan "github.com/shadowscatcher/shodan"
 
@@ -43,6 +44,16 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 	d.ConnectionManager.Cache.Set(cacheKey, conn)
 
 	return conn, nil
+}
+
+func isErrorWithMessage(err error, messages []string) bool {
+	errMsg := err.Error()
+	for _, msg := range messages {
+		if strings.Contains(errMsg, msg) {
+			return true
+		}
+	}
+	return false
 }
 
 func queryString(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {

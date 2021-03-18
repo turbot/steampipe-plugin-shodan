@@ -58,13 +58,6 @@ func ipString(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 	return ip, nil
 }
 
-/*
-func ipToString(_ context.Context, d *transform.TransformData) (interface{}, error) {
-	ip := d.Value.(net.IP)
-	return ip.String(), nil
-}
-*/
-
 func listHost(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	conn, err := connect(ctx, d)
 	if err != nil {
@@ -76,6 +69,10 @@ func listHost(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 	result, err := conn.Host(ctx, search.HostParams{IP: ip})
 	if err != nil {
 		plugin.Logger(ctx).Error("shodan_host.listHost", "query_error", err)
+		if isErrorWithMessage(err, []string{"No information available for that IP", "Invalid IP"}) {
+			// Not found or invalid (so not found)
+			return nil, nil
+		}
 		return nil, err
 	}
 	d.StreamListItem(ctx, result)

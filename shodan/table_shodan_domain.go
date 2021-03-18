@@ -2,7 +2,6 @@ package shodan
 
 import (
 	"context"
-	"strings"
 
 	"github.com/shadowscatcher/shodan/search"
 
@@ -59,7 +58,9 @@ func listDomain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 		result, err := conn.DnsDomain(ctx, q)
 		if err != nil {
 			plugin.Logger(ctx).Error("shodan_domain.listDomain", "query_error", err)
-			if strings.Contains(err.Error(), "requires enterprise access") {
+			if isErrorWithMessage(err, []string{"No information available for that domain", "requires enterprise access"}) {
+				// Cases:
+				// Not found
 				// Paging is only allowed for enterprise. In other cases just return
 				// the single page of results and stop.
 				break

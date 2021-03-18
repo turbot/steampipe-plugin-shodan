@@ -100,6 +100,10 @@ func listHostService(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 	result, err := conn.Host(ctx, search.HostParams{IP: ip})
 	if err != nil {
 		plugin.Logger(ctx).Error("shodan_ip.listHostService", "query_error", err)
+		if isErrorWithMessage(err, []string{"No information available for that IP", "Invalid IP"}) {
+			// Not found or invalid (so not found)
+			return nil, nil
+		}
 		return nil, err
 	}
 	for _, i := range result.Services {
