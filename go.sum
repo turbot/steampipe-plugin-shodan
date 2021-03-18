@@ -105,8 +105,6 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/sergi/go-diff v1.0.0/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
-github.com/shadowscatcher/shodan v1.0.5 h1:s248jC/3BU3YNz2+EWSYeXs07/lxkkjo4+tGF6V8wFs=
-github.com/shadowscatcher/shodan v1.0.5/go.mod h1:8tnu38ME7RJgOfkJt/20JXK7bMvPTYCkLagO3IhI2SI=
 github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72 h1:qLC7fQah7D6K1B0ujays3HV9gkFtllcxhzImRR7ArPQ=
 github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72/go.mod h1:JwIasOWyU6f++ZhiEuf87xNszmSA2myDM2Kzu9HwQUA=
 github.com/spf13/pflag v1.0.2/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
@@ -122,8 +120,8 @@ github.com/tkrajina/go-reflector v0.5.4 h1:dS9aJEa/eYNQU/fwsb5CSiATOxcNyA/gG/A7a
 github.com/tkrajina/go-reflector v0.5.4/go.mod h1:9PyLgEOzc78ey/JmQQHbW8cQJ1oucLlNQsg8yFvkVk8=
 github.com/turbot/go-kit v0.1.1 h1:JkLUyVp8m8jEj45C52dzh7Tj9jpxHP90y9+m8cpW1mo=
 github.com/turbot/go-kit v0.1.1/go.mod h1:hO/mY90fJXLWAJnAoDkYMvi3LVZ/r+z1tiz3E1uPSNA=
-github.com/turbot/steampipe-plugin-sdk v0.2.3 h1:c5yhnOfKDWGoU8hOvH5jrqb85vthhVNLHfNKNYfGxns=
-github.com/turbot/steampipe-plugin-sdk v0.2.3/go.mod h1:3R868UGCRVR5ptSpYY+zGetiq2ZqjVDP8wlrapVh6rc=
+github.com/turbot/steampipe-plugin-sdk v0.2.6 h1:dzIZJknmb+AQkC3eUF5ayKdyK4/JCMNK/37+t6cz2bg=
+github.com/turbot/steampipe-plugin-sdk v0.2.6/go.mod h1:3R868UGCRVR5ptSpYY+zGetiq2ZqjVDP8wlrapVh6rc=
 github.com/vmihailenco/msgpack v3.3.3+incompatible/go.mod h1:fy3FlTQTDXWkZ7Bh6AcGMlsjHatGryHQYUTf1ShIgkk=
 github.com/vmihailenco/msgpack/v4 v4.3.12/go.mod h1:gborTTJjAo/GWTqqRjrLCn9pgNN+NXzzngzBKDPIqw4=
 github.com/vmihailenco/tagparser v0.1.1/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=

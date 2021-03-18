@@ -6,5 +6,5 @@ replace github.com/shadowscatcher/shodan => github.com/e-gineer/shodan v1.0.6-0.
 
 require (
 	github.com/shadowscatcher/shodan v1.0.5
-	github.com/turbot/steampipe-plugin-sdk v0.2.3
+	github.com/turbot/steampipe-plugin-sdk v0.2.6
 )
