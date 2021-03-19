@@ -68,17 +68,11 @@ jobs:
             exit 1
           fi
 
-      - name: Hook private repo
-        run: git config --global url."https://turbot-mods:${{ secrets.GH_ACCESS_TOKEN }}@github.com".insteadOf "https://github.com"
-
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
           version: latest
           args: release --rm-dist --skip-publish
-        env:
-          GOPRIVATE: github.com/turbot
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List Build Artifacts
         run: ls -laR ./dist
