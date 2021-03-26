@@ -1,4 +1,4 @@
-### Note  
+## Note for users!
 The Shodan Plugin for Steampipe can be managed automatically with the Steampipe CLI.
 For more information on how to get started view the [documentation](https://hub.steampipe.io/plugins/turbot/shodan) 
 and [setup guide](https://www.terraform.io/docs/Plugins/oci/guides/version-3-upgrade.html).
@@ -16,8 +16,6 @@ select * from shodan_host_service where ip = '8.8.8.8'
 - [Shodan plugin issues](https://github.com/turbot/steampipe-plugin-shodan/issues)
 - [Steampipe issues](https://github.com/turbot/steampipe/issues)
 - [Discussion forums](https://github.com/turbot/steampipe/discussions)
-- [Troubleshooting](https://www.terraform.io/docs/Plugins/oci/guides/troubleshooting.html)
-
 
 ## Requirements
 
