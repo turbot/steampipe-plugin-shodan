@@ -1,4 +1,4 @@
-## Note for users!
+## Note for users new to Steampipe
 The Shodan Plugin for Steampipe can be managed automatically with the Steampipe CLI.
 For more information on how to get started view the [documentation](https://hub.steampipe.io/plugins/turbot/shodan) 
 and [setup guide](https://www.terraform.io/docs/Plugins/oci/guides/version-3-upgrade.html).
@@ -58,13 +58,18 @@ Compile the Plugin by running `make`. The Plugin binary will output to your Stea
 $ make
 ```
 
-### Community
+## Community
 
 The Steampipe community can be found on [GitHub Discussions](https://github.com/turbot/steampipe/discussions), where you can ask questions, voice ideas, and share your projects. Our [Code of Conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md) applies to all Steampipe community channels.
 
-### Contributing
+## Contributing
 
 Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md).
-Issues with the `help wanted` tag:
+
+`Help wanted` issues:
 - [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
 - [Shodan Plugin](https://github.com/turbot/steampipe-plugin-shodan/labels/help%20wanted)
+
+## License
+
+By contributing to Steampipe and Steampipe plugins you agree that your contributions will be licensed as defined on the [LICENSE](LICENSE) file.
