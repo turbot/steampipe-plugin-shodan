@@ -1,42 +1,63 @@
-<p align="center">
-    <h1 align="center">Shodan Plugin for Steampipe</h1>
-</p>
+## NOTICE  
+**The Shodan Plugin for Steampipe can be managed automatically with the Steampipe CLI.
+For more information on how to get started view the [documentation](https://hub.steampipe.io/plugins/turbot/shodan) 
+and [setup guide](https://www.terraform.io/docs/Plugins/oci/guides/version-3-upgrade.html).**
 
-<p align="center">
-  <a aria-label="Steampipe logo" href="https://steampipe.io">
-    <img src="https://steampipe.io/images/steampipe_logo_wordmark_padding.svg" height="28">
-  </a>
-  <a aria-label="License" href="LICENSE">
-    <img alt="" src="https://img.shields.io/static/v1?label=license&message=MPL-2.0&style=for-the-badge&labelColor=777777&color=F3F1F0">
-  </a>
-</p>
+# The Shodan Plugin for Steampipe
 
-## Query Shodan with SQL
-
-Use SQL to query host, DNS and exploit information using Shodan. For example:
+Use SQL to query Shodan APIs including host, DNS and exploit information. For example:
 
 ```sql
-select
-  *
-from
-  shodan_host_service
-where
-  ip = '8.8.8.8'
+select * from shodan_host_service where ip = '8.8.8.8'
 ```
 
-Learn about [Steampipe](https://steampipe.io/).
+- [Documentation](https://hub.steampipe.io/plugins/turbot/shodan)
+- [Tables & schemas](https://hub.steampipe.io/plugins/turbot/shodan/tables)
+- [Shodan plugin issues](https://github.com/turbot/steampipe-plugin-shodan/issues)
+- [Steampipe issues](https://github.com/turbot/steampipe/issues)
+- [Discussion forums](https://github.com/turbot/steampipe/discussions)
+- [Troubleshooting](https://www.terraform.io/docs/Plugins/oci/guides/troubleshooting.html)
 
-## Get started
 
-**[Table documentation and examples &rarr;](https://hub.steampipe.io/plugins/turbot/shodan)**
+## Requirements
 
-Install the plugin:
+- [Steampipe](https://steampipe.io/downloads) v0.3.3 or greater
+- [Go](https://golang.org/doc/install) 1.12.3 (recommended)
 
+## Building the Plugin
+
+Install Steampipe – [Instructions](https://steampipe.io/downloads)
+Clone repository to: `$GOPATH/src/github.com/turbot/steampipe-plugin-shodan`
+
+```sh
+$ mkdir -p $GOPATH/src/github.com/turbot; cd $GOPATH/src/github.com/turbot
+$ git clone git@github.com:turbot/steampipe-plugin-shodan
 ```
-steampipe plugin install shodan
+
+Enter the plugin directory and build the plugin
+
+```sh
+$ cd $GOPATH/src/github.com/turbot/steampipe-plugin-shodan
+$ make
 ```
 
-## Get involved
+## Using the Plugin
+
+During the `make` process, the script will output the plugin to `~/.steampipe/plugins/hub.steampipe.io/plugins/turbot/shodan@latest/steampipe-plugin-shodan.plugin` which is the default location for steampipe plugins. Restart Steampipe if already running. Then try a test query:
+
+```sql
+select * from shodan_host_service where ip = '8.8.8.8'
+```
+
+## Developing the Plugin
+
+To add features to the Plugin, install [Go](http://www.golang.org) and configure your your [GOPATH](http://golang.org/doc/code.html#GOPATH)
+
+Compile the Plugin by running `make`. The Plugin binary will output to your Steampipe plugin directory.
+
+```sh
+$ make
+```
 
 ### Community
 
@@ -47,3 +68,6 @@ Our [Code of Conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_COND
 ### Contributing
 
 Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md).
+Help wanted:
+- [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
+- [Shodan Plugin](https://github.com/turbot/steampipe-plugin-shodan/labels/help%20wanted)

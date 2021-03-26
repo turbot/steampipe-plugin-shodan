@@ -8,12 +8,46 @@ name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
 ---
 
+# Steampipe
+
+The open source Steampipe CLI allows you to perform real-time queries against cloud APIs using SQL, without having to extract, transform and load data into a local DB.
+
 # Shodan
 
-Shodan provides host, DNS and exploit information from scanning the Internet.
+Shodan is a search engine for Internet-connected devices. Shodan gathers information about devices directly connected to the Internet. The types of devices that are indexed can vary tremendously: ranging from small desktops up to nuclear power plants and everything in between.
 
+# Steampipe + Shodan
+
+Steampipe allows you to query Shodan's APIs with SQL, including host metadata, open ports, DNS info and potential exploits; this is even more powerful when using joins against other cloud service APIs:
+
+```
+> select
+    i.title,
+    h.ip,
+    h.ports,
+    h.isp
+  from
+    aws_ec2_instance i,
+    shodan_host h
+  where
+    i.public_ip_address is not null
+    and i.public_ip_address = h.ip;
+
+  +---------------------+-------------+---------+------------------+
+  | title               | ip          | ports   | isp              |
+  +---------------------+-------------+---------+------------------+
+  | Ubuntu 18 Test      | 3.94.153.81 | [80,22] | Amazon.com, Inc. |
+  | Redhat 8 Test       | 3.93.36.148 | [22]    | Amazon.com, Inc. |
+  | Ubuntu 20 Test      | 3.239.46.31 | [22]    | Amazon.com, Inc. |
+  | Amazon Linux 2 Test | 3.239.34.4  | [111]   | Amazon.com, Inc. |
+  +---------------------+-------------+---------+------------------+
+```
+
+Browse all [available tables and their schemas](shodan/tables).
 
 ## Installation
+
+[Install or update Steampipe](https://steampipe.io/downloads) if not already installed.
 
 To download and install the latest shodan plugin:
 
