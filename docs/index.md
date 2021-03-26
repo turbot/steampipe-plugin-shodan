@@ -10,15 +10,15 @@ description: Steampipe plugin to query host, DNS and exploit information using S
 
 # Steampipe
 
-The Steampipe CLI is open source software that allows you to perform real-time queries against cloud APIs using SQL, without having to extract, transform and load data into a local DB. If you are just getting started checkout [steampipe.io](https://steampipe.io).
+The Steampipe CLI is open source software that allows you to perform real-time queries against cloud APIs using SQL; without having to extract, transform and load data into a local DB. If you are just getting started checkout [steampipe.io](https://steampipe.io).
 
 # Shodan
 
-Shodan is a search engine for Internet-connected devices. Shodan gathers information about devices directly connected to the Internet. The types of devices that are indexed can vary tremendously: ranging from small desktops up to nuclear power plants and everything in between.
+Shodan is a search engine for Internet-connected devices. Shodan gathers information about devices directly connected to the Internet. The types of devices that are indexed can vary tremendously: ranging from internet connected cameras to cloud hosted servers, and everything in-between.
 
 # Steampipe + Shodan
 
-Steampipe allows you to query Shodan's APIs with SQL, including host metadata, open ports, DNS info and potential exploits; this is even more powerful when joining against other cloud service APIs:
+Steampipe allows you to query Shodan's APIs with SQL; retrieving host metadata, open ports, DNS info and even potential exploits. This metadata can be made even more powerful by joining against other cloud service APIs:
 
 ```sql
 select
