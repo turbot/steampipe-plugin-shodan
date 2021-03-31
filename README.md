@@ -1,7 +1,6 @@
 ## Note for users new to Steampipe
 The Shodan Plugin for Steampipe can be managed automatically with the Steampipe CLI.
-For more information on how to get started view the [documentation](https://hub.steampipe.io/plugins/turbot/shodan) 
-and [setup guide](https://www.terraform.io/docs/Plugins/oci/guides/version-3-upgrade.html).
+For more information on how to get started view the [documentation](https://hub.steampipe.io/plugins/turbot/shodan).
 
 # The Shodan Plugin for Steampipe
 
@@ -33,11 +32,21 @@ $ mkdir -p $GOPATH/src/github.com/turbot; cd $GOPATH/src/github.com/turbot
 $ git clone git@github.com:turbot/steampipe-plugin-shodan
 ```
 
-Enter the plugin directory and build the plugin
+Enter the plugin directory and build the plugin:
 
 ```sh
 $ cd $GOPATH/src/github.com/turbot/steampipe-plugin-shodan
 $ make
+```
+
+Copy configuration files from repo to local steampipe config:
+```sh
+$ cp $GOPATH/src/github.com/turbot/steampipe-plugin-shodan/config/* ~/.steampipe/config
+```
+
+View and update the configuration file settings for your environment [see the plugin docs](https://hub.steampipe.io/plugins/turbot/shodan) for additional info:
+```sh
+$ pico ~/.steampipe/config/shodan.spc
 ```
 
 ## Using the Plugin

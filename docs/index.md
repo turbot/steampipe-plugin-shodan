@@ -6,6 +6,8 @@ brand_color: "#C83237"
 display_name: Shodan
 name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
+social_about: Use SQL to query host, DNS and exploit information using Shodan. Open source CLI. No DB required. 
+social_preview: "/images/plugins/turbot/shodan-social-graphic.png"
 ---
 
 # Steampipe
