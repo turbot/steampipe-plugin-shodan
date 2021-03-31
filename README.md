@@ -16,16 +16,14 @@ select * from shodan_host_service where ip = '8.8.8.8'
 - [Steampipe issues](https://github.com/turbot/steampipe/issues)
 - [Discussion forums](https://github.com/turbot/steampipe/discussions)
 
-## Requirements
+## Prerequisites
 
-- [Steampipe](https://steampipe.io/downloads) v0.3.3 or greater
-- [Go](https://golang.org/doc/install) 1.12.3 (recommended)
+- Install [Steampipe](https://steampipe.io/downloads) v0.3.3 or greater
+- Install [Golang](https://golang.org/doc/install) 1.15.x or greater
 
 ## Building the Plugin
 
-Install Steampipe: [Instructions](https://steampipe.io/downloads)
-
-Clone repository:
+Clone the repository:
 
 ```sh
 $ mkdir -p $GOPATH/src/github.com/turbot; cd $GOPATH/src/github.com/turbot
@@ -41,10 +39,10 @@ $ make
 
 Copy configuration files from repo to local steampipe config:
 ```sh
-$ cp $GOPATH/src/github.com/turbot/steampipe-plugin-shodan/config/* ~/.steampipe/config
+$ cp $GOPATH/src/github.com/turbot/steampipe-plugin-shodan/config/*.spc ~/.steampipe/config
 ```
 
-View and update the configuration file settings for your environment [see the plugin docs](https://hub.steampipe.io/plugins/turbot/shodan) for additional info:
+Read and update the configuration file setting(s) for your environment [see the plugin docs](https://hub.steampipe.io/plugins/turbot/shodan) for additional info:
 ```sh
 $ pico ~/.steampipe/config/shodan.spc
 ```
