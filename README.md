@@ -30,6 +30,7 @@ $ mkdir -p $GOPATH/src/github.com/turbot; cd $GOPATH/src/github.com/turbot
 $ git clone git@github.com:turbot/steampipe-plugin-shodan
 ```
 
+
 Enter the plugin directory and build the plugin:
 
 ```sh
@@ -37,10 +38,12 @@ $ cd $GOPATH/src/github.com/turbot/steampipe-plugin-shodan
 $ make
 ```
 
+
 Copy configuration files from repo to local steampipe config:
 ```sh
 $ cp $GOPATH/src/github.com/turbot/steampipe-plugin-shodan/config/*.spc ~/.steampipe/config
 ```
+
 
 Read and update the configuration file setting(s) for your environment [see the plugin docs](https://hub.steampipe.io/plugins/turbot/shodan) for additional info:
 ```sh
