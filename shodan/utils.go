@@ -2,6 +2,7 @@ package shodan
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"os"
 	"strings"
@@ -19,9 +20,10 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 		return cachedData.(*shodan.Client), nil
 	}
 
-	var apiKey string
+	// Default to using the env var (#2)
+	apiKey := os.Getenv("SHODAN_API_KEY")
 
-	// First, use the api_key config
+	// Prefer the config (#1)
 	shodanConfig := GetConfig(d.Connection)
 	if &shodanConfig != nil {
 		if shodanConfig.APIKey != nil {
@@ -29,9 +31,9 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 		}
 	}
 
-	// Otherwise, default to using SHODAN_KEY env var
 	if apiKey == "" {
-		apiKey = os.Getenv("SHODAN_API_KEY")
+		// Credentials not set
+		return nil, errors.New("api_key must be configured")
 	}
 
 	// Configure to automatically wait 1 sec between requests, per Shodan API requirements
