@@ -2,7 +2,7 @@
 
 Search the Internet for information about hosts and their services. Please see the [examples](https://beta.shodan.io/search/examples), a [cheat sheet](https://thedarksource.com/shodan-cheat-sheet/) and the [filter reference](https://beta.shodan.io/search/filters) to understand the query options.
 
-Note: A `query` must be provided in all queries to this table.
+Note: The `query` field must be set in the `where` clause.
 
 ## Examples
 
