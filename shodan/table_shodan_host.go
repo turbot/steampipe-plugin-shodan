@@ -13,7 +13,7 @@ import (
 func tableShodanHost(ctx context.Context) *plugin.Table {
 	return &plugin.Table{
 		Name:        "shodan_host",
-		Description: "All services that have been found on the given host at IP.",
+		Description: "ISP, geolocation, open ports and other info about a host at a given IP address.",
 		List: &plugin.ListConfig{
 			Hydrate:    listHost,
 			KeyColumns: plugin.SingleColumn("ip"),

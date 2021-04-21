@@ -15,7 +15,7 @@ import (
 func tableShodanHostService(ctx context.Context) *plugin.Table {
 	return &plugin.Table{
 		Name:             "shodan_host_service",
-		Description:      "All services that have been found on the given host.",
+		Description:      "Publicly accessible services that have been found on a given host during a Shodan scan.",
 		DefaultTransform: transform.FromJSONTag(),
 		List: &plugin.ListConfig{
 			Hydrate:    listHostService,
