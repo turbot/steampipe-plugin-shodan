@@ -6,21 +6,17 @@ brand_color: "#C83237"
 display_name: Shodan
 name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
-social_about: Use SQL to query host, DNS and exploit information using Shodan. Open source CLI. No DB required. 
+social_about: Query host, DNS and exploit information using SQL. Open source CLI. No DB required. 
 social_preview: "/images/plugins/turbot/shodan-social-graphic.png"
 ---
 
-# Steampipe
-
-The Steampipe CLI is open source software that allows you to perform real-time queries against cloud APIs using SQL; all without having to extract, transform and load data into a local DB. If you are just getting started checkout [steampipe.io](https://steampipe.io).
-
-# Shodan
+# Shodan + Steampipe
 
 [Shodan](https://shodan.io) is a search engine for Internet-connected devices. Shodan gathers information about devices directly connected to the Internet. The types of devices that are indexed can vary tremendously: ranging from internet connected cameras to cloud hosted servers, and everything in-between.
 
-# Steampipe + Shodan
+[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
 
-Steampipe allows you to query Shodan's APIs with SQL; retrieving host metadata, open ports, DNS info and even potential exploits. This metadata can be made even more powerful by joining against other cloud service APIs:
+For Example:
 
 ```sql
 select
@@ -46,28 +42,32 @@ where
 +---------------------+-------------+---------+------------------+
 ```
 
-Browse all [available tables and their schemas](shodan/tables).
+## Documentation
 
-## Installation
+- **[Table definitions & examples →](/plugins/turbot/shodan/tables)**
 
-[Install or update Steampipe](https://steampipe.io/downloads) if not already installed.
+## Get started
 
-To download and install the latest shodan plugin:
+### Install
+
+Download and install the latest Shodan plugin:
 
 ```bash
 steampipe plugin install shodan
 ```
 
-## Credentials
+### Credentials
 
-Shodan requires an API token for all requests, but offers a free tier. Sign up on the [shodan website](https://shodan.com) to get your free token. A valid token looks like `ZGloRBAl2Tvur3tBTu84NkZIf3i5Cc5U`.
+| Item | Description |
+| - | - |
+| Credentials | Shodan requires an API token for all requests, but offers a free tier. Sign up on the [shodan website](https://shodan.com) to get your free token. A valid token looks like `ZGloRBAl2Tvur3tBTu84NkZIf3i5Cc5U`. |
+| Permissions | N/A |
+| Radius | Each connection represents a single Shodan account. |
+| Resolution |  1. Credentials specified in environment variables e.g. `SHODAN_API_KEY`.<br />2. Credentials in the credential file (`~/.shodan/credentials`) |
 
+### Configuration
 
-## Connection Configuration
-
-Connection configurations are defined using HCL in one or more Steampipe config files. Steampipe will load ALL configuration files from `~/.steampipe/config` that have a `.spc` extension. A config file may contain multiple connections.
-
-Installing the latest shodan plugin will create a default connection named `shodan` in the `~/.steampipe/config/shodan.spc` file.  You must edit this connection to include your API token:
+Installing the latest aws plugin will create a config file (`~/.steampipe/config/shodan.spc`) with a single connection named `shodan`:
 
 ```hcl
 connection "shodan" {
@@ -75,3 +75,8 @@ connection "shodan" {
   api_key = "ZGloRBAl2Tvur3tBTu84NkZIf3i5Cc5U"
 }
 ```
+
+## Get involved
+
+* Open source: https://github.com/turbot/steampipe-plugin-shodan
+* Community: [Slack Channel](https://join.slack.com/t/steampipe/shared_invite/zt-oij778tv-lYyRTWOTMQYBVAbtPSWs3g)
