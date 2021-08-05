@@ -23,7 +23,7 @@ steampipe plugin install shodan
 
 ## Credentials
 
-Shodan requires an API token for all requests, but offers a free tier. Sign up on the [shodan website](https://shodan.com) to get your free token. It looks like `ZGloRBAl2Tvur3tBTu84NkZIf3i5Cc5U`.
+Shodan requires an API token for all requests, but offers a free tier. Sign up on the [Shodan website](https://www.shodan.io) to get your free token. It looks like `ZGloRBAl2Tvur3tBTu84NkZIf3i5Cc5U`.
 
 
 ## Connection Configuration
