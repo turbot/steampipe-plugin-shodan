@@ -28,17 +28,8 @@ Prerequisites:
 
 Clone:
 
-Cloning with HTTPS URL
-
 ```sh
 git clone https://github.com/turbot/steampipe-plugin-shodan.git
-cd steampipe-plugin-shodan
-```
-
-Cloning with SSH URL (Refer [GitHub](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-ssh-urls))
-
-```sh
-git clone git@github.com:turbot/steampipe-plugin-shodan.git
 cd steampipe-plugin-shodan
 ```
 
