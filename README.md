@@ -29,7 +29,7 @@ Prerequisites:
 Clone:
 
 ```sh
-git clone git@github.com:turbot/steampipe-plugin-shodan
+git clone https://github.com/turbot/steampipe-plugin-shodan.git
 cd steampipe-plugin-shodan
 ```
 
