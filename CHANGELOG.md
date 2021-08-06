@@ -1,3 +1,12 @@
+## v0.1.0 [2021-08-06]
+
+_Enhancements_
+
+- Updated: README.md and docs/index.md have been updated with the latest formats ([#8](https://github.com/turbot/steampipe-plugin-shodan/pull/8))
+
+_Bug fixes_
+
+- Fixed: All Shodan website links now point to the correct URLs ([#7](https://github.com/turbot/steampipe-plugin-shodan/pull/7))
 
 ## v0.0.1 [2021-03-18]
 
