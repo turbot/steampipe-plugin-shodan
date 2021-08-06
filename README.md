@@ -1,49 +1,73 @@
-<p align="center">
-    <h1 align="center">Shodan Plugin for Steampipe</h1>
-</p>
+![image](https://hub.steampipe.io/images/plugins/turbot/shodan-social-graphic.png)
 
-<p align="center">
-  <a aria-label="Steampipe logo" href="https://steampipe.io">
-    <img src="https://steampipe.io/images/steampipe_logo_wordmark_padding.svg" height="28">
-  </a>
-  <a aria-label="License" href="LICENSE">
-    <img alt="" src="https://img.shields.io/static/v1?label=license&message=Apache-2.0&style=for-the-badge&labelColor=777777&color=F3F1F0">
-  </a>
-</p>
+# Shodan Plugin for Steampipe
 
-## Query Shodan with SQL
+* **[Get started →](https://hub.steampipe.io/plugins/turbot/shodan)**
+* Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/shodan/tables)
+* Community: [Slack Channel](https://join.slack.com/t/steampipe/shared_invite/zt-oij778tv-lYyRTWOTMQYBVAbtPSWs3g)
+* Get involved: [Issues](https://github.com/turbot/steampipe-plugin-shodan/issues)
 
-Use SQL to query host, DNS and exploit information using Shodan. For example:
+## Quick start
 
-```sql
-select
-  *
-from
-  shodan_host_service
-where
-  ip = '8.8.8.8'
-```
-
-Learn about [Steampipe](https://steampipe.io/).
-
-## Get started
-
-**[Table documentation and examples &rarr;](https://hub.steampipe.io/plugins/turbot/shodan)**
-
-Install the plugin:
-
-```
+Install the plugin with [Steampipe](https://steampipe.io):
+```shell
 steampipe plugin install shodan
 ```
 
-## Get involved
+Run a query:
 
-### Community
+```sql
+select * from shodan_host_service where ip = '8.8.8.8'
+```
 
-The Steampipe community can be found on [GitHub Discussions](https://github.com/turbot/steampipe/discussions), where you can ask questions, voice ideas, and share your projects.
+## Developing
 
-Our [Code of Conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md) applies to all Steampipe community channels.
+Prerequisites:
+- [Steampipe](https://steampipe.io/downloads)
+- [Golang](https://golang.org/doc/install)
 
-### Contributing
+Clone:
 
-Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md).
+Cloning with HTTPS URL
+
+```sh
+git clone https://github.com/turbot/steampipe-plugin-shodan.git
+cd steampipe-plugin-shodan
+```
+
+Cloning with SSH URL (Refer [GitHub](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-ssh-urls))
+
+```sh
+git clone git@github.com:turbot/steampipe-plugin-shodan.git
+cd steampipe-plugin-shodan
+```
+
+Build, which automatically installs the new version to your `~/.steampipe/plugins` directory:
+```
+make
+```
+
+Configure the plugin:
+```
+cp config/* ~/.steampipe/config
+vi ~/.steampipe/config/shodan.spc
+```
+
+Try it!
+```
+steampipe query
+> .inspect shodan
+```
+
+Further reading:
+* [Writing plugins](https://steampipe.io/docs/develop/writing-plugins)
+* [Writing your first table](https://steampipe.io/docs/develop/writing-your-first-table)
+
+## Contributing
+
+Please see the [contribution guidelines](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md). All contributions are subject to the [MPL-2.0 open source license](https://github.com/turbot/steampipe-plugin-shodan/blob/main/LICENSE).
+
+`help wanted` issues:
+- [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
+- [Shodan Plugin](https://github.com/turbot/steampipe-plugin-shodan/labels/help%20wanted)
+
