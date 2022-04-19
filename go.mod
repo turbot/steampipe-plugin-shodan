@@ -1,6 +1,6 @@
 module github.com/turbot/steampipe-plugin-shodan
 
-go 1.17
+go 1.18
 
 require (
 	github.com/shadowscatcher/shodan v1.0.6
