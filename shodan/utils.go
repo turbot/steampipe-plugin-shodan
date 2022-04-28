@@ -25,10 +25,8 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 
 	// Prefer the config (#1)
 	shodanConfig := GetConfig(d.Connection)
-	if &shodanConfig != nil {
-		if shodanConfig.APIKey != nil {
-			apiKey = *shodanConfig.APIKey
-		}
+	if shodanConfig.APIKey != nil {
+		apiKey = *shodanConfig.APIKey
 	}
 
 	if apiKey == "" {

@@ -96,7 +96,7 @@ func intToIP(ctx context.Context, d *transform.TransformData) (interface{}, erro
 }
 
 func searchBanner(_ context.Context, d *transform.TransformData) (interface{}, error) {
-	re := regexp.MustCompile("\\r?\\n")
+	re := regexp.MustCompile(`\\r?\\n`)
 	s := d.Value.(models.Service)
 	banners := []string{}
 	for _, b := range re.Split(s.Data, -1) {
