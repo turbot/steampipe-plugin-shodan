@@ -9,7 +9,7 @@ import (
 
 	shodan "github.com/shadowscatcher/shodan"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
@@ -57,7 +57,7 @@ func isErrorWithMessage(err error, messages []string) bool {
 }
 
 func queryString(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	q := quals["query"].GetStringValue()
 	return q, nil
 }

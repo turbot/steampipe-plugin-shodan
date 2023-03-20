@@ -5,9 +5,9 @@ import (
 
 	"github.com/shadowscatcher/shodan/search"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableShodanHost(ctx context.Context) *plugin.Table {
@@ -53,7 +53,7 @@ func tableShodanHost(ctx context.Context) *plugin.Table {
 // Better to use the input IP string instead of net.IP.String() to be more confident it
 // will match when returning.
 func ipString(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	ip := quals["ip"].GetInetValue().GetAddr()
 	return ip, nil
 }
@@ -64,7 +64,7 @@ func listHost(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 		plugin.Logger(ctx).Error("shodan_host.listHost", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	ip := quals["ip"].GetInetValue().GetAddr()
 	result, err := conn.Host(ctx, search.HostParams{IP: ip})
 	if err != nil {
