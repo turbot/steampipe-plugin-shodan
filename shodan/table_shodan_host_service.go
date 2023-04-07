@@ -7,9 +7,9 @@ import (
 	"github.com/shadowscatcher/shodan/models"
 	"github.com/shadowscatcher/shodan/search"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableShodanHostService(ctx context.Context) *plugin.Table {
@@ -95,7 +95,7 @@ func listHostService(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 		plugin.Logger(ctx).Error("shodan_ip.listHostService", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	ip := quals["ip"].GetInetValue().GetAddr()
 	result, err := conn.Host(ctx, search.HostParams{IP: ip})
 	if err != nil {

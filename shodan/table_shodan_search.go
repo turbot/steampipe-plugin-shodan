@@ -9,9 +9,9 @@ import (
 	"github.com/shadowscatcher/shodan/models"
 	"github.com/shadowscatcher/shodan/search"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableShodanSearch(ctx context.Context) *plugin.Table {
@@ -113,7 +113,7 @@ func listSearch(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 		plugin.Logger(ctx).Error("shodan_search.listSearch", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	q := quals["query"].GetStringValue()
 	params := search.Params{Query: search.Query{Text: q}, Page: 1}
 	count := 0

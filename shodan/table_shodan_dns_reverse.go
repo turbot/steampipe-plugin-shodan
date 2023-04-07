@@ -3,8 +3,8 @@ package shodan
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableShodanDNSReverse(ctx context.Context) *plugin.Table {
@@ -34,7 +34,7 @@ func listDNSReverse(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 		plugin.Logger(ctx).Error("shodan_dns_reverse.listDNSReverse", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	ip := quals["ip"].GetInetValue().GetAddr()
 	result, err := conn.DnsReverse(ctx, []string{ip})
 	if err != nil {
