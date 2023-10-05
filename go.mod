@@ -3,7 +3,7 @@ module github.com/turbot/steampipe-plugin-shodan
 go 1.21
 
 require (
-	github.com/shadowscatcher/shodan v1.0.6
+	github.com/shadowscatcher/shodan v1.0.7
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.6.2
 )
 
