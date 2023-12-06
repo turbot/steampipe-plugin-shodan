@@ -1,15 +1,18 @@
 ---
-title: "Steampipe Table: shodan_host_service - Query OCI Shodan Host Services using SQL"
+title: "Steampipe Table: shodan_host_service - Query Shodan Host Services using SQL"
 description: "Allows users to query Shodan Host Services, providing insights into the services running on a particular host, including the port, transport protocol, and product information."
 ---
 
-# Table: shodan_host_service - Query OCI Shodan Host Services using SQL
+# Table: shodan_host_service - Query Shodan Host Services using SQL
 
 Shodan is a search engine for internet-connected devices. It provides a wealth of information about hosts, including open ports, protocols, and services. This information is crucial for security researchers, network administrators, and penetration testers to understand the digital footprint of a host.
 
 ## Table Usage Guide
 
 The `shodan_host_service` table provides insights into the services running on a specific host within the Shodan search engine. As a security researcher or network administrator, explore service-specific details through this table, including ports, protocols, and product information. Utilize it to uncover information about a host's digital footprint, such as open ports and the services running on them.
+
+**Important Notes**
+- You must specify the `ip` in the `where` clause to query this table.
 
 ## Examples
 

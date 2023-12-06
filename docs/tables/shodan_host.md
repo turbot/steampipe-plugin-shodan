@@ -11,6 +11,9 @@ Shodan is a search engine that lets users find specific types of computers conne
 
 The `shodan_host` table provides insights into devices connected to the internet and their characteristics. As a security analyst, you can explore device-specific details through this table, including their IP addresses, hostnames, operating systems, and potential vulnerabilities. Utilize it to uncover information about devices, such as their geographical locations, open ports, and the services running on them.
 
+**Important Notes**
+- You must specify the `ip` in the `where` clause to query this table.
+
 ## Examples
 
 ### Basic host information

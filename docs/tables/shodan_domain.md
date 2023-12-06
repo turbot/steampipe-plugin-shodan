@@ -11,6 +11,9 @@ Shodan is a search engine that lets the user find specific types of computers (w
 
 The `shodan_domain` table provides insights into domain names and the servers they point to within Shodan. As a network administrator or security analyst, explore domain-specific details through this table, including server metadata, IP addresses, and associated hostnames. Utilize it to uncover information about servers, such as their geographical location, operating system, and open ports, to help in identifying potential security vulnerabilities or infrastructure improvements.
 
+**Important Notes**
+- You must specify the `domain` in the `where` clause to query this table.
+
 ## Examples
 
 ### Reverse DNS lookup

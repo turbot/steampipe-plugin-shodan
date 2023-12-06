@@ -11,6 +11,9 @@ Shodan is a search engine for internet-connected devices. It provides a way to d
 
 The `shodan_search` table provides insights into internet-connected devices as indexed by Shodan. As a cybersecurity analyst, explore device-specific details through this table, including IP addresses, hostnames, and potential vulnerabilities. Utilize it to uncover information about devices, such as their geographic location, the software they are running, and their exposure to potential cyber threats.
 
+**Important Notes**
+- You must specify the `query` in the `where` clause to query this table.
+
 ## Examples
 
 ### List all services for a network range
