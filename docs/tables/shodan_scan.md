@@ -16,21 +16,37 @@ The `shodan_scan` table provides insights into individual scans performed on the
 ### List the scans
 Uncover the details of all the completed network scans to analyze potential vulnerabilities or security threats. This is useful in maintaining the security posture of your network and proactively addressing potential risks.
 
-```sql
+```sql+postgres
 select
   *
 from
-  shodan_scan
+  shodan_scan;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_scan;
 ```
 
 ### List scans that are not complete
 Determine the areas in which scans are still in progress or have not been completed, allowing for improved tracking and management of scanning operations.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_scan
 where
-  status != 'DONE'
+  status != 'DONE';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_scan
+where
+  status != 'DONE';
 ```

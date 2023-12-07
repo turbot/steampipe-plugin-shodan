@@ -16,9 +16,16 @@ The `shodan_account_profile` table provides insights into user profiles within S
 ### List the scans
 Explore your Shodan account profile to gain insights into the details of your scans. This could be useful in identifying potential security vulnerabilities and understanding areas for improvement.
 
-```sql
+```sql+postgres
 select
   *
 from
-  shodan_account_profile
+  shodan_account_profile;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_account_profile;
 ```

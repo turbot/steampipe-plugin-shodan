@@ -19,19 +19,28 @@ The `shodan_host_service` table provides insights into the services running on a
 ### List all service information for an IP
 Explore which services are associated with a specific IP address. This can be useful for understanding the functionality and potential vulnerabilities of the device or system associated with that IP.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_host_service
 where
-  ip = '8.8.8.8'
+  ip = '8.8.8.8';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_host_service
+where
+  ip = '8.8.8.8';
 ```
 
 ### SSL certificate details for services
 Analyze the settings to understand the SSL certificate details for specific services on a given IP address. This is useful for ensuring secure connections by checking the validity and details of SSL certificates.
 
-```sql
+```sql+postgres
 select
   ip,
   port,
@@ -40,13 +49,25 @@ from
   shodan_host_service
 where
   ip = '140.82.112.4'
-  and ssl is not null
+  and ssl is not null;
+```
+
+```sql+sqlite
+select
+  ip,
+  port,
+  json_extract(ssl, '$.cert') as ssl_cert
+from
+  shodan_host_service
+where
+  ip = '140.82.112.4'
+  and ssl is not null;
 ```
 
 ### Check Heartbleed status for each service
 Determine the Heartbleed vulnerability status for each service on a specific IP address. This can be crucial in identifying potential security risks and taking appropriate measures to mitigate them.
 
-```sql
+```sql+postgres
 select
   ip,
   port,
@@ -54,5 +75,16 @@ select
 from
   shodan_host_service
 where
-  ip = '140.82.112.4'
+  ip = '140.82.112.4';
+```
+
+```sql+sqlite
+select
+  ip,
+  port,
+  json_extract(opts, '$.heartbleed') as heartbleed
+from
+  shodan_host_service
+where
+  ip = '140.82.112.4';
 ```

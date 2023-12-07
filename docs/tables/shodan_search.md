@@ -19,35 +19,57 @@ The `shodan_search` table provides insights into internet-connected devices as i
 ### List all services for a network range
 Explore all the services associated with a specific network range. This is useful for gaining insights into the various operations within a particular network segment, helping to better manage and secure your network infrastructure.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_search
 where
-  query = 'net:34.98.0.0/26'
+  query = 'net:34.98.0.0/26';
+```
+
+```sql+sqlite
+Error: SQLite does not support CIDR operations.
 ```
 
 ### Find all Windows XP hosts
 Determine the areas in which Windows XP is still being used to understand potential security vulnerabilities and outdated systems in your network.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_search
 where
-  query = 'os:"windows xp"'
+  query = 'os:"windows xp"';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_search
+where
+  query = 'os:"windows xp"';
 ```
 
 ### Find all services for the GitHub organization
 Discover all the services associated with a particular organization, in this case, GitHub. This is useful for gaining insights into the various services that an organization utilizes or is associated with.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_search
 where
-  query = 'org:"GitHub"'
+  query = 'org:"GitHub"';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_search
+where
+  query = 'org:"GitHub"';
 ```

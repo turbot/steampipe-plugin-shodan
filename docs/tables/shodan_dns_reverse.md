@@ -19,11 +19,20 @@ The `shodan_dns_reverse` table provides insights into the DNS Reverse within Sho
 ### Reverse DNS lookup
 Analyze the settings to understand the details associated with a specific IP address. This can be useful for identifying the ownership and configuration of a network resource.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_dns_reverse
 where
-  ip = '8.8.8.8'
+  ip = '8.8.8.8';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_dns_reverse
+where
+  ip = '8.8.8.8';
 ```

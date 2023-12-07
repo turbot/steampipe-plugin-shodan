@@ -16,9 +16,16 @@ The `shodan_api_info` table provides insights into the Shodan API's plan, usage,
 ### Get API status
 Analyze the status of your APIs to ensure they're functioning as expected and to identify any potential issues that may need addressing. This can be crucial in maintaining smooth and efficient operations within your digital infrastructure.
 
-```sql
+```sql+postgres
 select
   *
 from
-  shodan_api_info
+  shodan_api_info;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_api_info;
 ```

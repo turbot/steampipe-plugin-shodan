@@ -16,35 +16,62 @@ The `shodan_service` table provides insights into services indexed by Shodan. As
 ### List the services
 Analyze the settings to understand the arrangement of services based on their port numbers. This allows you to pinpoint the specific locations where services are operating, aiding in network management and security.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_service
 order by
-  port
+  port;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_service
+order by
+  port;
 ```
 
 ### Find the service for a port
 Identify the specific service operating on a given port number. This is useful for understanding what software is running on your network and can help with network management and security.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_service
 where
-  port = 5432
+  port = 5432;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_service
+where
+  port = 5432;
 ```
 
 ### Get information about the Puppet service
 Explore which services are associated with Puppet, a configuration management tool. This query is useful in identifying instances where Puppet is being used, which can aid in network management and security audits.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_service
 where
-  name ilike '%puppet%'
+  name ilike '%puppet%';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_service
+where
+  name like '%puppet%';
 ```

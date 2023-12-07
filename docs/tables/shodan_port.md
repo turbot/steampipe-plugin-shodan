@@ -16,11 +16,20 @@ The `shodan_port` table provides insights into open ports detected by Shodan, th
 ### List the ports
 Explore which ports are being used in your network. This can help in identifying potential vulnerabilities or unusual activity for security purposes.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_port
 order by
-  port
+  port;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_port
+order by
+  port;
 ```

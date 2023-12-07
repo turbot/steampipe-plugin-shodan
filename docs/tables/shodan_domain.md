@@ -19,37 +19,66 @@ The `shodan_domain` table provides insights into domain names and the servers th
 ### Reverse DNS lookup
 Analyze the settings to understand the domain configuration for 'steampipe.io'. This can be useful in identifying potential security vulnerabilities or misconfigurations.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_domain
 where
-  domain = 'steampipe.io'
+  domain = 'steampipe.io';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_domain
+where
+  domain = 'steampipe.io';
 ```
 
 ### Find all A records for the domain and its subdomains
 Explore all A records associated with a specific domain and its subdomains. This is useful for understanding the IP addresses linked to a domain, aiding in network mapping and security assessments.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_domain
 where
   domain = 'github.com'
-  and type = 'A'
+  and type = 'A';
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_domain
+where
+  domain = 'github.com'
+  and type = 'A';
 ```
 
 ### Get all records for the domain, without subdomain enumeration
 Explore the main records associated with a specific domain, without including any subdomains. This can be useful when you need an overview of the main domain's details, without the potential clutter of subdomain information.
 
-```sql
+```sql+postgres
 select
   *
 from
   shodan_domain
 where
   domain = 'github.com'
-  and subdomain is null
+  and subdomain is null;
+```
+
+```sql+sqlite
+select
+  *
+from
+  shodan_domain
+where
+  domain = 'github.com'
+  and subdomain is null;
 ```
