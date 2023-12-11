@@ -8,6 +8,7 @@ name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
 og_description: "Query Shodan with SQL! Open source CLI. No DB required."
 og_image: "/images/plugins/turbot/shodan-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # Shodan + Steampipe
