@@ -2,17 +2,10 @@ package shodan
 
 import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/schema"
 )
 
 type shodanConfig struct {
-	APIKey *string `cty:"api_key"`
-}
-
-var ConfigSchema = map[string]*schema.Attribute{
-	"api_key": {
-		Type: schema.TypeString,
-	},
+	APIKey *string `hcl:"api_key"`
 }
 
 func ConfigInstance() interface{} {
