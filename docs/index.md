@@ -8,13 +8,14 @@ name: shodan
 description: Steampipe plugin to query host, DNS and exploit information using Shodan.
 og_description: "Query Shodan with SQL! Open source CLI. No DB required."
 og_image: "/images/plugins/turbot/shodan-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # Shodan + Steampipe
 
 [Shodan](https://www.shodan.io/) provides host, DNS and exploit information from scanning the Internet.
 
-[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
+[Steampipe](https://steampipe.io) is an open-source zero-ETL engine to instantly query cloud APIs using SQL.
 
 For example:
 
@@ -60,7 +61,4 @@ connection "shodan" {
 }
 ```
 
-## Get involved
 
-* [Open source](https://github.com/turbot/steampipe-plugin-shodan)
-* Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
