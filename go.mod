@@ -5,7 +5,7 @@ go 1.22.4
 toolchain go1.22.6
 
 require (
-	github.com/shadowscatcher/shodan v1.0.6
+	github.com/shadowscatcher/shodan v1.0.8
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.4
 )
 

@@ -532,8 +532,8 @@ github.com/rogpeppe/go-internal v1.11.0 h1:cWPaGQEPrBb5/AsnsZesgZZ9yb1OQ+GOISoDN
 github.com/rogpeppe/go-internal v1.11.0/go.mod h1:ddIwULY96R17DhadqLgMfk9H9tvdUzkipdSkR5nkCZA=
 github.com/sethvargo/go-retry v0.2.4 h1:T+jHEQy/zKJf5s95UkguisicE0zuF9y7+/vgz08Ocec=
 github.com/sethvargo/go-retry v0.2.4/go.mod h1:1afjQuvh7s4gflMObvjLPaWgluLLyhA1wmVZ6KLpICw=
-github.com/shadowscatcher/shodan v1.0.6 h1:T8G8DSK9NZmpOK68elQpspGWTwa2l5pGCFhIyGubZuA=
-github.com/shadowscatcher/shodan v1.0.6/go.mod h1:8tnu38ME7RJgOfkJt/20JXK7bMvPTYCkLagO3IhI2SI=
+github.com/shadowscatcher/shodan v1.0.8 h1:oQ4r2zDBYnFkatcgE9tr/uuZb6VgL3V/DI1+lXT0qxo=
+github.com/shadowscatcher/shodan v1.0.8/go.mod h1:8tnu38ME7RJgOfkJt/20JXK7bMvPTYCkLagO3IhI2SI=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
 github.com/sirupsen/logrus v1.6.0/go.mod h1:7uNnSEd1DgxDLC74fIahvMZmmYsHGZGEOFrfsX/uA88=
