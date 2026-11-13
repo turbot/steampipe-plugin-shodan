@@ -9,14 +9,14 @@ import (
 
 	shodan "github.com/shadowscatcher/shodan"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
-func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
+func connect(ctx context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 
 	// Load connection from cache, which preserves throttling protection etc
 	cacheKey := "shodan"
-	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
 		return cachedData.(*shodan.Client), nil
 	}
 
@@ -41,7 +41,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*shodan.Client, error) {
 	}
 
 	// Save to cache
-	d.ConnectionManager.Cache.Set(cacheKey, conn)
+	_ = d.ConnectionCache.Set(ctx, cacheKey, conn)
 
 	return conn, nil
 }
